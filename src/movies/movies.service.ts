@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { lastValueFrom } from 'rxjs';
 import { ConfigService } from '@nestjs/config';
+import { format } from 'path';
 
 @Injectable()
 export class MoviesService {
@@ -16,6 +17,12 @@ export class MoviesService {
 
   async getMovieList(apiKey: string) {
     const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${apiKey}`;
+    const response = await lastValueFrom(this.httpService.get(url));
+    return response.data;
+  }
+
+  async getDailyBoxOffice(apiKey: string, date: string) {
+    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOffice.json?key=${apiKey}&targetDt=${date}`;
     const response = await lastValueFrom(this.httpService.get(url));
     return response.data;
   }
