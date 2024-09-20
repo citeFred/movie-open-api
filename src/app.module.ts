@@ -4,9 +4,13 @@ import { AppService } from './app.service';
 import { HttpModule } from '@nestjs/axios';
 import { MoviesService } from './movies/movies.service';
 import { MoviesController } from './movies/movies.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [HttpModule],
+  imports: [
+    ConfigModule.forRoot(),
+    HttpModule,
+  ],
   controllers: [AppController, MoviesController],
   providers: [AppService, MoviesService],
 })
