@@ -15,6 +15,6 @@ import { ScheduleModule } from '@nestjs/schedule';
     HttpModule,
   ],
   controllers: [AppController, MoviesController],
-  providers: [AppService, MoviesService],
+  providers: [AppService, MoviesService, DataCrawlerService],
 })
 export class AppModule {}
