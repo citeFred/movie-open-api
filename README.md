@@ -11,7 +11,7 @@
 
 
 ## 🕰️ 개발 기간
-* 24.8 - 현재
+* 24.9 - 현재
 
 ### 🧑‍🤝‍🧑 맴버구성 
  - 김인용
@@ -22,6 +22,14 @@
 - **IDE** : `VSCode`
 - **Framework** : `NestJS`
 - **Server** : `Express`
+
+## 📌 API 키 발급 방법
+1. [영화 진흥 위원회 OpenAPI 홈페이지](http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do)에 접속
+2. 회원가입을 통해 계정 생성
+3. 로그인 후, API 키 발급 신청 절차 진행
+4. 승인된 API 키를 확인하고, 프로젝트 루트 폴더(movie-open-api)에 .env 파일 생성 후 아래 내용 작성
+   ```plaintext
+   API_KEY = 879f0ad9e5a5b48....
 
 ## 📌 주요 기능
 #### OpenAPI 연결
