@@ -6,7 +6,7 @@ export class MoviesController {
   constructor(private moviesService: MoviesService) {}
 
   @Get()
-  async findMovie(@Query('apiKey') apiKey: string, @Query('movieCd') movieCd: string) {
-    return this.moviesService.getMovieInfo(apiKey, movieCd);
+  async findMovie(@Query('movieCd') movieCd: string) {
+    return this.moviesService.getMovieInfo(movieCd);
   }
 }
