@@ -26,4 +26,10 @@ export class MoviesService {
     const response = await lastValueFrom(this.httpService.get(url));
     return response.data;
   }
+
+  async getWeeklyBoxOffice(apiKey: string, date: string) {
+    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOffice.json?key=${apiKey}&targetDt=${date}&weekGb=0`;
+    const response = await lastValueFrom(this.httpService.get(url));
+    return response.data;
+  }
 }
