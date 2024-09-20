@@ -13,4 +13,10 @@ export class MoviesService {
     const response = await lastValueFrom(this.httpService.get(url));
     return response.data;
   }
+
+  async getMovieList(apiKey: string) {
+    const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=${apiKey}`;
+    const response = await lastValueFrom(this.httpService.get(url));
+    return response.data;
+  }
 }

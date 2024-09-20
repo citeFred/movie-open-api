@@ -14,4 +14,14 @@ export class MoviesController {
   async findMovie(@Query('movieCd') movieCd: string) {
     return this.moviesService.getMovieInfo(movieCd);
   }
+
+  /**
+   * Retrieve a list of movies.
+   * @param apiKey - The API key for authentication.
+   * @example http://localhost:3000/movies/list?apiKey=${apiKey}
+   */
+  @Get('list')
+  async getMovieList(@Query('apiKey') apiKey: string) {
+    return this.moviesService.getMovieList(apiKey);
+  }
 }
