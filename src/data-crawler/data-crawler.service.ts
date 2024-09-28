@@ -7,7 +7,7 @@ export class DataCrawlerService {
     constructor(private readonly moviesService: MoviesService) {}
 
     // Scheduled Works
-    @Cron('*/1 * * * *') // every 1 min
+    // @Cron('*/1 * * * *') // every 1 min
     async handleCron() {
         // const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
         const date = "20230901";

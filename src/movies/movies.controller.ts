@@ -8,11 +8,15 @@ export class MoviesController {
   /**
    * Get movie details
    * @param movieCd 
-   * @example http://localhost:3000/movies?movieCd=20124079
+   * @example http://localhost:3000/movies?movieCd=20124072
    */
+  // @Get()
+  // async findMovie(@Query('movieCd') movieCd: string) {
+  //   return this.moviesService.getMovieInfo(movieCd);
+  // }
   @Get()
-  async findMovie(@Query('movieCd') movieCd: string) {
-    return this.moviesService.getMovieInfo(movieCd);
+  async getMovies(@Query('title') title: string) {
+    return this.moviesService.getMovies(title);
   }
 
   /**
